@@ -4,15 +4,19 @@
 import "./RecipeCard.css";
 import React from 'react';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import RoomService from 'material-ui/svg-icons/places/room-service';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from 'react-router';
+import {fullWhite} from'material-ui/styles/colors';
+
 
 class RecipeCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             title: props.title,
-            description: props.description
+            description: props.description,
+            expanded: false
         };
     }
 
@@ -25,7 +29,14 @@ class RecipeCard extends React.Component {
     };
 
     openRecipe = (recipe) => {
-        console.log(recipe.title + " clicked.");
+        this.expanded = !this.expanded;
+        if (this.expanded) {
+            console.log(recipe.title + " expanded.");
+        }
+        else {
+            console.log(recipe.title + " collapsed.");
+        }
+
     };
 
     render() {
@@ -37,13 +48,14 @@ class RecipeCard extends React.Component {
         return (
             <div>
                 <Card className="recipe-card">
-                    <CardHeader title={recipe.title}/>
-                    <CardText>{recipe.description}</CardText>
+                    <CardHeader title={recipe.title} subtitle="Subtitle of recipe" showExpandableButton={true}/>
+                    <CardText expandable={true}>{recipe.description}</CardText>
                     <CardActions>
                         <Link to={"/recipe/" + recipe.id}>
                         <RaisedButton
-                            label="Expand"
-                            primary={true}
+                            icon={<RoomService color={fullWhite}/>}
+                            backgroundColor="#448AFF"
+                            className="cook-button"
                         />
                         </Link>
                     </CardActions>
