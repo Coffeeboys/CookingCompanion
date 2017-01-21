@@ -11,6 +11,8 @@ import {
 } from 'material-ui/Card';
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import NavigationIcon from 'material-ui/svg-icons/maps/navigation'
+import Routes from '../../constants/Routes'
+import {Link} from 'react-router';
 
 import DefinitionPopover from './DefinitionPopover';
 
@@ -34,9 +36,11 @@ class DirectionsCard extends React.Component {
                         Testing popover <DefinitionPopover text="here" description="This is a definition"/>.
                     </CardText>
                     <CardActions className="direction-button-container">
-                        <FloatingActionButton className="navigate-button" label="Action1">
-                            <NavigationIcon />
-                        </FloatingActionButton>
+                        <Link to={Routes.NAVIGATOR}>
+                            <FloatingActionButton className="navigate-button" label="Action1">
+                                <NavigationIcon />
+                            </FloatingActionButton>
+                        </Link>
                     </CardActions>
                 </Card>
             </div>
