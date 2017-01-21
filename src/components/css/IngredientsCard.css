@@ -1,3 +1,8 @@
 .ingredients-card {
-    flex: 1;
+    width: 25%;
+    height: 85%;
+    margin: 2% 40px 20px 5%;
+    float: left;
+    position: absolute;
 }
+
