@@ -21,9 +21,9 @@ let client = new SpoonacularClient();
 //  console.log("Recipe Info: ");
 //   console.log(data)
 // });
-client.getRandomRecipes(10,(data) => {
-   console.log(JSON.stringify(data));
- });
+// client.getRandomRecipes(10,(data) => {
+//    console.log(JSON.stringify(data));
+//  });
 //client.getRecipeSummarybyId(156992, (data => {console.log('Summary Results:' + data.summary)}));
 ReactDOM.render(
     <Router history={browserHistory}>
