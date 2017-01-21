@@ -43,7 +43,7 @@ class SpoonacularClient {
   getRandomRecipes( number, callback) {
     $.ajax(ENDPOINT + 'recipes/random?number=' + number, OPTIONS).done((data) => {
       if (data.recipes.length > 0) {
-        callback(data.recipes[0]);
+        callback(data.recipes);
       } else {
         callback(null);
       }
