@@ -20,7 +20,7 @@ class IngredientsCard extends Component {
         return (
             <div>
                 <Card className="ingredients-card">
-                    <CardHeader title={"Recipe Ingredients"}/>
+                    <CardHeader title={"Ingredients"}/>
                     <CardText>
                         <ul>
                             {ingredients.map((ingredient, i) => <li key={i}>{ingredient.name}</li>)}
