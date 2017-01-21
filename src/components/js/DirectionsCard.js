@@ -36,7 +36,7 @@ class DirectionsCard extends React.Component {
                         Testing popover <DefinitionPopover text="here" description="This is a definition"/>.
                     </CardText>
                     <CardActions className="direction-button-container">
-                        <Link to={Routes.NAVIGATOR}>
+                        <Link to={{pathname: Routes.NAVIGATOR, state: directions}}>
                             <FloatingActionButton className="navigate-button" label="Action1">
                                 <NavigationIcon />
                             </FloatingActionButton>
