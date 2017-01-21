@@ -40,8 +40,8 @@ class SpoonacularClient {
         });
   }
 
-  getRandomRecipe(callback) {
-    $.ajax(ENDPOINT + 'recipes/random?number=1', OPTIONS).done((data) => {
+  getRandomRecipes( number, callback) {
+    $.ajax(ENDPOINT + 'recipes/random?number=' + number, OPTIONS).done((data) => {
       if (data.recipes.length > 0) {
         callback(data.recipes[0]);
       } else {
@@ -49,6 +49,16 @@ class SpoonacularClient {
       }
     });
   }
+  //hard to say how many ingredient names are supported...
+  getunitConversionOfIngredient(ingredientName, value, srcUnit, targetUnit, callback){
+      $.ajax(ENDPOINT + 'recipes/convert?ingreientName=' + ingredientName
+             + '&sourceAmount=' + value
+             + '&sourceUnit=' + srcUnit
+             + '&targetUnit=' + targetUnit, OPTIONS).done((data) => {
+            callback(data);
+          });
+  }
+
 }
 
 export default SpoonacularClient;
