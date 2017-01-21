@@ -12,7 +12,9 @@ class App extends React.Component {
             <MuiThemeProvider>
                 <div>
                     <AppBar title="Cooking Companion"/>
-                    <RecipeList />
+                    <div>
+                        {this.props.children}
+                    </div>
                 </div>
             </MuiThemeProvider>
         );

@@ -7,6 +7,11 @@ import DirectionsCard from './DirectionsCard';
 import './ExpandedRecipe.css'
 
 class ExpandedRecipe extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log(props);
+    }
+
     render() {
         const ingredients = [
             "Apples",

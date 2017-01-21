@@ -5,6 +5,7 @@ import "./RecipeCard.css";
 import React from 'react';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Link} from 'react-router';
 
 class RecipeCard extends React.Component {
     constructor(props) {
@@ -29,6 +30,7 @@ class RecipeCard extends React.Component {
 
     render() {
         const recipe = {
+            id: 1,
             title: this.getTitle(),
             description: this.getDescription()
         };
@@ -38,11 +40,12 @@ class RecipeCard extends React.Component {
                     <CardHeader title={recipe.title}/>
                     <CardText>{recipe.description}</CardText>
                     <CardActions>
+                        <Link to={"/recipe/" + recipe.id}>
                         <RaisedButton
                             label="Expand"
                             primary={true}
-                            onTouchTap={this.openRecipe.bind(this, recipe)}
                         />
+                        </Link>
                     </CardActions>
                 </Card>
             </div>
