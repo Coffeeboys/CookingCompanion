@@ -6,6 +6,8 @@ import App from './App.js';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import ExpandedRecipe from './components/js/ExpandedRecipe';
 import RecipeList from './components/js/RecipeList';
+import RecipeNavigator from "./components/js/RecipeNavigator";
+import Routes from "./constants/Routes";
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -28,6 +30,7 @@ ReactDOM.render(
         <Route path="/" component={App}>
             <IndexRoute component={RecipeList}/>
             <Route path="recipe/:recipeid" component={ExpandedRecipe}/>
+            <Route path={Routes.NAVIGATOR} component={RecipeNavigator}/>
         </Route>
     </Router>,
     document.getElementById('root')
