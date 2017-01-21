@@ -8,7 +8,6 @@ import RoomService from 'material-ui/svg-icons/places/room-service';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from 'react-router';
 import {fullWhite} from'material-ui/styles/colors';
-import Routes from "../../constants/Routes";
 
 
 class RecipeCard extends React.Component {
@@ -53,15 +52,6 @@ class RecipeCard extends React.Component {
                     <CardText expandable={true}>{recipe.description}</CardText>
                     <CardActions>
                         <Link to={"/recipe/" + recipe.id}>
-                            <RaisedButton
-                                icon={<RoomService color={fullWhite}/>}
-                                backgroundColor="#448AFF"
-                                className="cook-button"
-                            />
-                        </Link>
-                    </CardActions>
-                    <CardActions>
-                        <Link to={Routes.NAVIGATOR}>
                             <RaisedButton
                                 icon={<RoomService color={fullWhite}/>}
                                 backgroundColor="#448AFF"
