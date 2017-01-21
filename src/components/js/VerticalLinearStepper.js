@@ -7,6 +7,7 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import VoiceComponent from './VoiceComponent';
 
 /**
  * Vertical steppers are designed for narrow screen sizes. They are ideal for mobile.
