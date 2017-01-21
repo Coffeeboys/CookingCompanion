@@ -25,23 +25,40 @@ class SpoonacularClient {
       callback(data);
     });
   }
-    
+
 
   getRecipeInfoById(id, callback) {
     $.ajax(ENDPOINT + 'recipes/' + id + '/information', OPTIONS).done((data) => {
       callback(data);
     });
   }
+    //returns {id, title, summary} Object
+  getRecipeSummarybyId(id, callback){
+      $.ajax(ENDPOINT + '/recipes/' + id + '/summary', OPTIONS).done((data) =>
+        {
+          callback(data);
+        });
+  }
 
-  getRandomRecipe(callback) {
-    $.ajax(ENDPOINT + 'recipes/random?number=1', OPTIONS).done((data) => {
+  getRandomRecipes( number, callback) {
+    $.ajax(ENDPOINT + 'recipes/random?number=' + number, OPTIONS).done((data) => {
       if (data.recipes.length > 0) {
-        callback(data.recipes[0]);
+        callback(data.recipes);
       } else {
         callback(null);
       }
     });
   }
+  //hard to say how many ingredient names are supported...
+  getunitConversionOfIngredient(ingredientName, value, srcUnit, targetUnit, callback){
+      $.ajax(ENDPOINT + 'recipes/convert?ingreientName=' + ingredientName
+             + '&sourceAmount=' + value
+             + '&sourceUnit=' + srcUnit
+             + '&targetUnit=' + targetUnit, OPTIONS).done((data) => {
+            callback(data);
+          });
+  }
+
 }
 
 export default SpoonacularClient;
