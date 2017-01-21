@@ -4,7 +4,7 @@
 import React from 'react';
 import IngredientsCard from './IngredientsCard';
 import DirectionsCard from './DirectionsCard';
-import './ExpandedRecipe.css'
+import '../css/ExpandedRecipe.css'
 
 class ExpandedRecipe extends React.Component {
     constructor(props) {

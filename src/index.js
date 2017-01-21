@@ -4,8 +4,8 @@ import './index.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import App from './App.js';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-import ExpandedRecipe from './ExpandedRecipe';
-import RecipeList from './RecipeList';
+import ExpandedRecipe from './components/js/ExpandedRecipe';
+import RecipeList from './components/js/RecipeList';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941

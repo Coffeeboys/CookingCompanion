@@ -2,7 +2,7 @@
  * Created by Aarjente! on 1/21/2017.
  */
 import React from 'react';
-import './DirectionsCard.css';
+import '../css/DirectionsCard.css';
 import {
     Card,
     CardHeader,

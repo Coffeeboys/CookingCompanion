@@ -3,7 +3,6 @@
  */
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RecipeList from './RecipeList.js';
 import AppBar from 'material-ui/AppBar';
 
 class App extends React.Component {

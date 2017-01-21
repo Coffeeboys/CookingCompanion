@@ -1,7 +1,7 @@
 /**
  * Created by AlexLand on 2017-01-21.
  */
-import "./RecipeCard.css";
+import "../css/RecipeCard.css";
 import React from 'react';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import RoomService from 'material-ui/svg-icons/places/room-service';

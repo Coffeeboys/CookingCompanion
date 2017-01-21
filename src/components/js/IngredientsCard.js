@@ -5,7 +5,7 @@ import {
     CardHeader,
     CardText
 } from 'material-ui/Card';
-import "./IngredientsCard.css";
+import "../css/IngredientsCard.css";
 
 
 class IngredientsCard extends Component {
