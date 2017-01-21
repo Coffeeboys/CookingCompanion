@@ -1,28 +1,34 @@
 
-import React from 'react';
+import React, { Component }  from 'react';
 import {
     Card,
-    CardActions,
     CardHeader,
     CardText
 } from 'material-ui/Card';
-import "./PairCard.css";
+import "./IngredientsCard.css";
 
 
-class IngredientsCard extends React.Component {
+class IngredientsCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ingredients: props.ingredients
+        };
+    }
     render() {
+        const ingredients = this.state.ingredients;
         return (
             <div>
-                <Card className="pair-card">
-                    <CardHeader
-                        title={"Recipe Ingredients"}/>
-                    <CardActions>
-                    </CardActions>
+                <Card className="ingredients-card">
+                    <CardHeader title={"Recipe Ingredients"}/>
                     <CardText>
+                        <ul>
+                            {ingredients.map((ingredient, i) => <li key={i}>{ingredient}</li>)}
+                        </ul>
                     </CardText>
                 </Card>
             </div>
-        )
+        );
     }
 }
 
