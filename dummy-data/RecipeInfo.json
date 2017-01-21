@@ -1,0 +1,160 @@
+{
+  "vegetarian":false,
+  "vegan":false,
+  "glutenFree":true,
+  "dairyFree":true,
+  "veryHealthy":false,
+  "cheap":false,
+  "veryPopular":false,
+  "sustainable":false,
+  "weightWatcherSmartPoints":13,
+  "gaps":"no",
+  "lowFodmap":true,
+  "ketogenic":false,
+  "whole30":true,
+  "servings":6,
+  "preparationMinutes":10,
+  "cookingMinutes":15,
+  "sourceUrl":"http://www.musingsofahousewife.com/2012/06/gourmet-hamburgers-2.html",
+  "spoonacularSourceUrl":"https://spoonacular.com/gourmet-hamburgers-593020",
+  "aggregateLikes":37,
+  "spoonacularScore":51,
+  "healthScore":7,
+  "creditText":"Musings of a House Wife",
+  "sourceName":"Musings of a House Wife",
+  "extendedIngredients":[
+    {
+      "id":2035,
+      "aisle":"Spices and Seasonings",
+      "image":"https://spoonacular.com/cdn/ingredients_100x100/spices.png",
+      "name":"black pepper",
+      "amount":0.5,
+      "unit":"teaspoon",
+      "unitShort":"t",
+      "unitLong":"teaspoons",
+      "originalString":"½ teaspoon black pepper",
+      "metaInformation":[
+        "black"
+      ]
+    },
+    {
+      "id":1125,
+      "aisle":"Milk, Eggs, Other Dairy",
+      "image":"https://spoonacular.com/cdn/ingredients_100x100/hard-boiled-egg.jpg",
+      "name":"egg yolks",
+      "amount":3,
+      "unit":"",
+      "unitShort":"",
+      "unitLong":"",
+      "originalString":"3 large egg yolks",
+      "metaInformation":[
+        "large"
+      ]
+    },
+    {
+      "id":10023572,
+      "aisle":"Meat",
+      "image":"https://spoonacular.com/cdn/ingredients_100x100/fresh-ground-beef.jpg",
+      "name":"ground beef",
+      "amount":2,
+      "unit":"pounds",
+      "unitShort":"lb",
+      "unitLong":"pounds",
+      "originalString":"2 pounds ground beef",
+      "metaInformation":[
+
+      ]
+    },
+    {
+      "id":2047,
+      "aisle":"Spices and Seasonings",
+      "image":"https://spoonacular.com/cdn/ingredients_100x100/salt.jpg",
+      "name":"salt",
+      "amount":1,
+      "unit":"teaspoon",
+      "unitShort":"t",
+      "unitLong":"teaspoon",
+      "originalString":"1 teaspoon salt",
+      "metaInformation":[
+
+      ]
+    },
+    {
+      "id":6971,
+      "aisle":"Condiments",
+      "image":"https://spoonacular.com/cdn/ingredients_100x100/dark-sauce.jpg",
+      "name":"worcestershire sauce",
+      "amount":2,
+      "unit":"tablespoons",
+      "unitShort":"T",
+      "unitLong":"tablespoons",
+      "originalString":"2 tablespoons Worcestershire Sauce",
+      "metaInformation":[
+
+      ]
+    },
+    {
+      "aisle":"?",
+      "name":"toppings",
+      "amount":6,
+      "unit":"servings",
+      "unitShort":"servings",
+      "unitLong":"servings",
+      "originalString":"your favorite toppings",
+      "metaInformation":[
+        "your favorite"
+      ]
+    }
+  ],
+  "id":593020,
+  "title":"Gourmet Hamburgers",
+  "readyInMinutes":25,
+  "image":"https://spoonacular.com/recipeImages/Gourmet-Hamburgers-593020.jpg",
+  "imageType":"jpg",
+  "cuisines":[
+    "american"
+  ],
+  "dishTypes":[
+    "lunch",
+    "main course",
+    "main dish",
+    "dinner"
+  ],
+  "pricePerServing":133.13,
+  "instructions":"Mix everything together lightly with a fork or clean hands.Gently form each hamburger into a patty.Grill over medium heat for 5 minutes on each side or until they are cooked to your preferences. Remove to a plate and cover with aluminum foil. Rest for 5 minutes and serve immediately with your favorite toppings.",
+  "analyzedInstructions":[
+    {
+      "name":"",
+      "steps":[
+        {
+          "number":1,
+          "step":"Mix everything together lightly with a fork or clean hands.Gently form each hamburger into a patty.Grill over medium heat for 5 minutes on each side or until they are cooked to your preferences.",
+          "ingredients":[
+
+          ],
+          "equipment":[
+            {
+              "id":404706,
+              "name":"grill",
+              "image":"https://spoonacular.com/cdn/equipment_100x100/grill.jpg"
+            }
+          ]
+        },
+        {
+          "number":2,
+          "step":"Remove to a plate and cover with aluminum foil. Rest for 5 minutes and serve immediately with your favorite toppings.",
+          "ingredients":[
+
+          ],
+          "equipment":[
+            {
+              "id":404765,
+              "name":"aluminum foil",
+              "image":"https://spoonacular.com/cdn/equipment_100x100/aluminum-foil.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
