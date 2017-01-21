@@ -9,10 +9,6 @@ import VerticalLinearStepper from "./VerticalLinearStepper";
  * and passes it to the VerticalLinearStepper. More functionality may be added to the wrapper later
  */
 class RecipeNavigator extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render () {
     return (
         <VerticalLinearStepper directions={this.props.location.state}/>
