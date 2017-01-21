@@ -27,7 +27,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={RecipeList}/>
-            <Route path="recipe/:recipeid" component={ExpandedRecipe}/>
+            <Route path="recipe/:recipeId" component={ExpandedRecipe}/>
         </Route>
     </Router>,
     document.getElementById('root')
