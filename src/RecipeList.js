@@ -1,18 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './RecipeList.css';
-import AppBar from 'material-ui/AppBar';
 import RecipeCard from './RecipeCard.js';
 
-class RecipeList extends Component {
-  render() {
-    return (
-      <div className="App">
-        <AppBar title="Recipe List"/>
-            <RecipeCard title="title" description="description"/>
-        </div>
-    );
-  }
+class RecipeList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            recipes: [
+                {
+                    title: "Chicken Teriyaki",
+                    description: "Chicken and vegetables with a teriyaki sauce served over rice"
+                },
+                {
+                    title: "Pizza",
+                    description: "Vegetables and meat with sauce on a dough crust"
+                },
+                {
+                    title: "Apple Pie",
+                    description: "Dessert with apples"
+                }
+            ]
+        };
+    }
+
+    render() {
+      const recipes = this.state.recipes;
+        return (
+            <div>
+                {recipes.map(recipe => <RecipeCard title={recipe.title} description={recipe.description}/>)}
+            </div>
+        );
+    }
 }
 
 export default RecipeList;

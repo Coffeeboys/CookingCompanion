@@ -2,11 +2,11 @@
  * Created by AlexLand on 2017-01-21.
  */
 import "./RecipeCard.css";
-import React, { Component } from 'react';
+import React from 'react';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 
-class RecipeCard extends Component {
+class RecipeCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,22 +23,30 @@ class RecipeCard extends Component {
         return this.state.description;
     };
 
-    openRecipe = () => {
-        console.log(this.state.recipe + " clicked.");
+    openRecipe = (recipe) => {
+        console.log(recipe.title + " clicked.");
     };
 
     render() {
-        return <Card>
-            <CardHeader title={this.getTitle()}/>
-            <CardText>{this.getDescription}</CardText>
-            <CardActions>
-                <RaisedButton
-                    label="Expand"
-                    primary="true"
-                    onTouchTap={this.openRecipe()}
-                />
-            </CardActions>
-        </Card>
+        const recipe = {
+            title: this.getTitle(),
+            description: this.getDescription()
+        };
+        return (
+            <div>
+                <Card className="recipe-card">
+                    <CardHeader title={recipe.title}/>
+                    <CardText>{recipe.description}</CardText>
+                    <CardActions>
+                        <RaisedButton
+                            label="Expand"
+                            primary="true"
+                            onTouchTap={this.openRecipe.bind(this, recipe)}
+                        />
+                    </CardActions>
+                </Card>
+            </div>
+        );
     }
 }
 
