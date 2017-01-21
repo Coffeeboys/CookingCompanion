@@ -23,21 +23,25 @@ class RecipeCard extends React.Component {
         return this.state.description;
     };
 
-    openRecipe = () => {
-        console.log(this.state.title + " clicked.");
+    openRecipe = (recipe) => {
+        console.log(recipe.title + " clicked.");
     };
 
     render() {
+        const recipe = {
+            title: this.getTitle(),
+            description: this.getDescription()
+        };
         return (
             <div>
                 <Card className="recipe-card">
-                    <CardHeader title={this.getTitle()}/>
-                    <CardText>{this.getDescription}</CardText>
+                    <CardHeader title={recipe.title}/>
+                    <CardText>{recipe.description}</CardText>
                     <CardActions>
                         <RaisedButton
                             label="Expand"
                             primary="true"
-                            onTouchTap={this.openRecipe()}
+                            onTouchTap={this.openRecipe.bind(this, recipe)}
                         />
                     </CardActions>
                 </Card>
