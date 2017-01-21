@@ -13,17 +13,17 @@ import Routes from "./constants/Routes";
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
-//API Client Demo Code
-// import SpoonacularClient from "./api/SpoonacularClient";
-// let client = new SpoonacularClient();
-// client.searchRecipes('chicken', 10, (data) => {console.log('Search Results: ' + data)});
-// client.getRecipeInfoById(156992, (data) => {
-//   console.log("Recipe Info: ");
-//   console.log(data)
-// });
-// client.getRandomRecipe((data) => {
-//   console.log('Random Recipe: ' + JSON.stringify(data));
-// });
+// API Client Demo Code
+import SpoonacularClient from "./api/SpoonacularClient";
+let client = new SpoonacularClient();
+client.searchRecipesAuto('chicken', 10, (data) => {console.log('Search Results: ' + data)});
+client.getRecipeInfoById(156992, (data) => {
+  console.log("Recipe Info: ");
+  console.log(data)
+});
+client.getRandomRecipe((data) => {
+  console.log('Random Recipe: ' + JSON.stringify(data));
+});
 
 ReactDOM.render(
     <Router history={browserHistory}>
