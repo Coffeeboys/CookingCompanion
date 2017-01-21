@@ -27,7 +27,7 @@ class RecipeList extends React.Component {
       const recipes = this.state.recipes;
         return (
             <div>
-                {recipes.map(recipe => <RecipeCard title={recipe.title} description={recipe.description}/>)}
+                {recipes.map((recipe, i) => <RecipeCard key={i} title={recipe.title} description={recipe.description}/>)}
             </div>
         );
     }
