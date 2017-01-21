@@ -8,6 +8,7 @@ import {
     CardHeader,
     CardText
 } from 'material-ui/Card';
+import DefinitionPopover from './DefinitionPopover';
 
 class DirectionsCard extends React.Component {
     constructor(props) {
@@ -24,8 +25,9 @@ class DirectionsCard extends React.Component {
                     <CardHeader title="Directions"/>
                     <CardText>
                         <ol>
-                            {directions.map((step, i) => <li key={i}>{step}</li>)}
+                            {directions.map((step, i) => <li key={i}>{step.step}</li>)}
                         </ol>
+                        Testing popover <DefinitionPopover text="here" description="This is a definition"/>.
                     </CardText>
                 </Card>
             </div>

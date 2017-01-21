@@ -23,7 +23,7 @@ class IngredientsCard extends Component {
                     <CardHeader title={"Recipe Ingredients"}/>
                     <CardText>
                         <ul>
-                            {ingredients.map((ingredient, i) => <li key={i}>{ingredient}</li>)}
+                            {ingredients.map((ingredient, i) => <li key={i}>{ingredient.name}</li>)}
                         </ul>
                     </CardText>
                 </Card>
