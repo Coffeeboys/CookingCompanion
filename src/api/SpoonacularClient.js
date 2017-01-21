@@ -25,12 +25,19 @@ class SpoonacularClient {
       callback(data);
     });
   }
-    
+
 
   getRecipeInfoById(id, callback) {
     $.ajax(ENDPOINT + 'recipes/' + id + '/information', OPTIONS).done((data) => {
       callback(data);
     });
+  }
+    //returns {id, title, summary} Object
+  getRecipeSummarybyId(id, callback){
+      $.ajax(ENDPOINT + '/recipes/' + id + '/summary', OPTIONS).done((data) =>
+        {
+          callback(data);
+        });
   }
 
   getRandomRecipe(callback) {

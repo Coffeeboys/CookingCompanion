@@ -14,17 +14,17 @@ import Routes from "./constants/Routes";
 injectTapEventPlugin();
 
 // API Client Demo Code
-{/*import SpoonacularClient from "./api/SpoonacularClient";*/}
-{/*let client = new SpoonacularClient();*/}
-// client.searchRecipesAuto('chicken', 10, (data) => {console.log('Search Results: ' + data)});
-// client.getRecipeInfoById(156992, (data) => {
-//   console.log("Recipe Info: ");
+// import SpoonacularClient from "./api/SpoonacularClient";
+// let client = new SpoonacularClient();
+//client.searchRecipesAuto('chicken', 10, (data) => {console.log('Search Results: ' + data)});
+//client.getRecipeInfoById(156992, (data) => {
+//  console.log("Recipe Info: ");
 //   console.log(data)
 // });
 // client.getRandomRecipe((data) => {
 //   console.log('Random Recipe: ' + JSON.stringify(data));
 // });
-
+//client.getRecipeSummarybyId(156992, (data => {console.log('Summary Results:' + data.summary)}));
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={App}>
