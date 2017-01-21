@@ -17,10 +17,6 @@ import FlatButton from 'material-ui/FlatButton';
  * <small>(The vertical stepper can also be used without `<StepContent>` to display a basic stepper.)</small>
  */
 class VerticalLinearStepper extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   state = {
     finished: false,
     stepIndex: 0,

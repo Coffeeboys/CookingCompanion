@@ -37,10 +37,6 @@ let dummyData = `
       ]`;
 
 class RecipeNavigator extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render () {
     return (
         <VerticalLinearStepper steps={JSON.parse(dummyData)}/>
