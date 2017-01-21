@@ -40,7 +40,7 @@ class RecipeCard extends React.Component {
                     <CardActions>
                         <RaisedButton
                             label="Expand"
-                            primary="true"
+                            primary={true}
                             onTouchTap={this.openRecipe.bind(this, recipe)}
                         />
                     </CardActions>
