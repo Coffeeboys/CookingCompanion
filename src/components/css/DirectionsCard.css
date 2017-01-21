@@ -1,3 +1,18 @@
 .directions-card {
-    flex: 2;
+    width: 60%;
+    height: 85%;
+    margin: 2% 5% 0px 0px;
+    position: absolute;
+    right: 0px;
+}
+
+.direction-button-container {
+    position: absolute !important;
+    bottom: 10px;
+    right: 0px;
+}
+
+.navigate-button {
+    position: relative !important;
+    right: 0px;
 }

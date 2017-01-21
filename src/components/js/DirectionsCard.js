@@ -6,8 +6,12 @@ import '../css/DirectionsCard.css';
 import {
     Card,
     CardHeader,
-    CardText
+    CardText,
+    CardActions
 } from 'material-ui/Card';
+import FloatingActionButton from 'material-ui/FloatingActionButton'
+import NavigationIcon from 'material-ui/svg-icons/maps/navigation'
+
 
 class DirectionsCard extends React.Component {
     constructor(props) {
@@ -27,6 +31,11 @@ class DirectionsCard extends React.Component {
                             {directions.map((step, i) => <li key={i}>{step}</li>)}
                         </ol>
                     </CardText>
+                    <CardActions className="direction-button-container">
+                        <FloatingActionButton className="navigate-button" label="Action1">
+                            <NavigationIcon />
+                        </FloatingActionButton>
+                    </CardActions>
                 </Card>
             </div>
         )
