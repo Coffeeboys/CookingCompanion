@@ -46,7 +46,7 @@ class VerticalLinearStepper extends React.Component {
     return (
         <div style={{margin: '12px 0'}}>
           <RaisedButton
-              label={stepIndex === 2 ? 'Finish' : 'Next'}
+              label={stepIndex === this.props.directions.length - 1 ? 'Finish' : 'Next'}
               disableTouchRipple={true}
               disableFocusRipple={true}
               primary={true}
