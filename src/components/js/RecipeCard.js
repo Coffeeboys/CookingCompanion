@@ -26,7 +26,7 @@ class RecipeCard extends React.Component {
                         <CardMedia
                             overlay={<CardTitle title={recipe.title} subtitle={recipe.cuisine}/>}
                         >
-                            <img src={recipe.image} height="500px"/>
+                            <img src={'https://spoonacular.com/recipeImages/' + recipe.image} height="500px"/>
                         </CardMedia>
                     </Link>
                 </Card>

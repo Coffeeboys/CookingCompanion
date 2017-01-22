@@ -5,7 +5,6 @@ import SpoonacularClient from '../../api/SpoonacularClient'
 import AutoCompleteText from './AutoCompleteText'
 
 let apiClient = new SpoonacularClient();
-let maxSearchResults = 10;
 
 class RecipeList extends React.Component {
     constructor(props) {
@@ -20,10 +19,9 @@ class RecipeList extends React.Component {
         return (
             <div>
                 <AutoCompleteText callback={(searchInput) => {
-                  apiClient.searchRecipesAuto(searchInput, maxSearchResults, (result) => {
-                    {/*result.filter(recipe => recipe.analyzedInstructions);*/}
+                  apiClient.searchRecipes(searchInput, (result) => {
                     this.setState({
-                        recipes: result,
+                        recipes: result.results,
                     });
                   })
                 }}/>
