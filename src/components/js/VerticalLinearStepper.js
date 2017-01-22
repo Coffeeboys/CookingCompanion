@@ -90,7 +90,7 @@ class VerticalLinearStepper extends React.Component {
             'previous' : () => {this.handlePrev()},
             'forward' : () => this.handleNext(),
             'quiet' : () => this.cancelVoice(),
-            'continue' : () => this.resumeVoice()
+            'continue' : () => this.resumeVoice(),
         };
 
         window.annyang.addCommands(commands);

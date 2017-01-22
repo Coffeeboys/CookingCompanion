@@ -15,7 +15,9 @@ class App extends React.Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <AppBar title="Cooking Companion"/>
+                    <AppBar title="Yell At Your Food"
+                            onTitleTouchTap={() => window.location = "/"}
+                            />
                     <div>
                         {this.props.children}
                     </div>
