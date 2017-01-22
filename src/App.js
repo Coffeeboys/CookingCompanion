@@ -5,7 +5,19 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 
+
 class App extends React.Component {
+
+    componentWillMount() {
+
+        var commands = {
+            'hello': function() { console.log('Hello world!'); }
+        };
+
+        window.annyang.addCommands(commands);
+
+        window.annyang.start();
+    }
     render() {
         return (
             <MuiThemeProvider>
@@ -19,5 +31,6 @@ class App extends React.Component {
         );
     }
 }
+
 
 export default App;

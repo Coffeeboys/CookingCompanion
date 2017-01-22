@@ -22,17 +22,6 @@ const commands = [
 class VoiceComponent extends Component {
     constructor(props) {
         super(props);
-        artyom.addCommands([{
-                indexes: ["hello", "hi", "hey"],
-                action: () => artyom.say("Hey there!")
-            },
-            {
-                smart: true,
-                indexes: ["How much * do I need?", "How many * do I need?"],
-                action: (i, wildcard) => {
-                    console.log("Voice command: " + commands[1].indexes[i] + " with wildcard " + wildcard);
-                }
-            }]);
     }
 
     render() {

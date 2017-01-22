@@ -7,7 +7,7 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import VoiceComponent from './VoiceComponent';
+
 
 /**
  * Vertical steppers are designed for narrow screen sizes. They are ideal for mobile.
@@ -18,6 +18,10 @@ import VoiceComponent from './VoiceComponent';
  * <small>(The vertical stepper can also be used without `<StepContent>` to display a basic stepper.)</small>
  */
 class VerticalLinearStepper extends React.Component {
+  componentWillMount() {
+
+  }
+
   state = {
     finished: false,
     stepIndex: 0,

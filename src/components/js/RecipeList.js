@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/RecipeList.css';
 import RecipeCard from './RecipeCard.js';
-import VoiceComponent from './VoiceComponent';
 
 class RecipeList extends React.Component {
     constructor(props) {
@@ -31,7 +30,6 @@ class RecipeList extends React.Component {
       const recipes = this.state.recipes;
         return (
             <div>
-                <VoiceComponent/>
                 {recipes.map((recipe, i) => <RecipeCard key={i} recipe={recipe}/>)}
             </div>
         );
