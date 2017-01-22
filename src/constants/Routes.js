@@ -1,5 +1,5 @@
 let Routes = {
-  RECIPE : '/recipe',
+  RECIPE : '/recipe/',
   NAVIGATOR : '/navigator',
 };
 

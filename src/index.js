@@ -29,7 +29,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={RecipeList}/>
-            <Route path="recipe/:recipeId" component={ExpandedRecipe}/>
+            <Route path={Routes.RECIPE + ":recipeId"} component={ExpandedRecipe}/>
             <Route path={Routes.NAVIGATOR} component={RecipeNavigator}/>
         </Route>
     </Router>,
