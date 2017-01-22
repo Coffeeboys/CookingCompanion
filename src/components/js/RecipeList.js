@@ -20,7 +20,7 @@ class RecipeList extends React.Component {
         return (
             <div>
                 <Card className="search-card">
-                    <CardHeader fullWidth={true} className="search-box">
+                    <CardHeader className="search-box">
                         <AutoCompleteText fullWidth={true}callback={(searchInput) => {
                              apiClient.searchRecipes(searchInput,  (result) => {
                                 this.setState({
