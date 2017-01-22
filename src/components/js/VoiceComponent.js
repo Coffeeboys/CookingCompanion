@@ -1,16 +1,45 @@
 /**
- * Created by aarjente on 21/01/17.
+ * Created by AlexLand on 2017-01-21.
  */
-
+import artyom from '../../../node_modules/artyom.js/build/artyom';
 import React, {Component} from 'react';
-import SpeechRecognition from 'react-speech-recognition';
-import { VoicePlayer, VoiceRecognition } from 'react-voice-components';
+// import Commands from '../../constants/Commands';
 
+const commands = [
+    {
+        indexes: ["hello", "hi", "hey"],
+        action: () => artyom.say("Hey there!")
+    },
+    {
+        smart: true,
+        indexes: ["How much * do I need?", "How many * do I need?"],
+        action: (i, wildcard) => {
+            console.log("Voice command: " + commands[1].indexes[i] + " with wildcard " + wildcard);
+        }
+    }
+];
 
 class VoiceComponent extends Component {
-    render () {
+    constructor(props) {
+        super(props);
+        artyom.addCommands([{
+                indexes: ["hello", "hi", "hey"],
+                action: () => artyom.say("Hey there!")
+            },
+            {
+                smart: true,
+                indexes: ["How much * do I need?", "How many * do I need?"],
+                action: (i, wildcard) => {
+                    console.log("Voice command: " + commands[1].indexes[i] + " with wildcard " + wildcard);
+                }
+            }]);
+    }
+
+    render() {
         return (
-            <div/>
+            <div>
+                Artyom lies here.
+            </div>
         )
     }
 }

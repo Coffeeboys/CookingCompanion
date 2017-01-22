@@ -14,49 +14,24 @@ class RecipeCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: props.title,
-            description: props.description,
             expanded: false
         };
     }
 
-    getTitle = () => {
-        return this.state.title;
-    };
-
-    getDescription = () => {
-        return this.state.description;
-    };
-
-    openRecipe = (recipe) => {
-        this.expanded = !this.expanded;
-        if (this.expanded) {
-            console.log(recipe.title + " expanded.");
-        }
-        else {
-            console.log(recipe.title + " collapsed.");
-        }
-
-    };
-
     render() {
-        const recipe = {
-            id: 593020,
-            title: this.getTitle(),
-            description: this.getDescription()
-        };
+        const recipe = this.props.recipe;
         return (
             <div>
                 <Card className="recipe-card">
-                    <CardHeader title={recipe.title} subtitle="Subtitle of recipe" showExpandableButton={true}/>
+                    <CardHeader title={recipe.title} subtitle={recipe.cuisine} showExpandableButton={true}/>
                     <CardText expandable={true}>{recipe.description}</CardText>
                     <CardActions>
-                        <Link to={"/recipe/" + recipe.id}>
-                            <RaisedButton
-                                icon={<RoomService color={fullWhite}/>}
-                                backgroundColor="#448AFF"
-                                className="cook-button"
-                            />
+                        <Link to={{pathname: "/recipe/" + recipe.id, state: recipe}}>
+                        <RaisedButton
+                            icon={<RoomService color={fullWhite}/>}
+                            backgroundColor="#448AFF"
+                            className="cook-button"
+                        />
                         </Link>
                     </CardActions>
                 </Card>
