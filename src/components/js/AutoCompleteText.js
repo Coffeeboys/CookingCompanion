@@ -11,11 +11,7 @@ class AutoCompleteText extends React.Component {
 
   handleUpdateInput = (value) => {
     this.setState({
-      dataSource: [
-        value,
-        value + value,
-        value + value + value,
-      ],
+
     });
   };
 
@@ -23,6 +19,7 @@ class AutoCompleteText extends React.Component {
     return (
         <div>
           <AutoComplete
+              fullWidth={true}
               hintText="Search Recipes"
               dataSource={this.state.dataSource}
               onUpdateInput={this.handleUpdateInput}

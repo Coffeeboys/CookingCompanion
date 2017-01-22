@@ -3,6 +3,7 @@ import '../css/RecipeList.css';
 import RecipeCard from './RecipeCard.js';
 import SpoonacularClient from '../../api/SpoonacularClient'
 import AutoCompleteText from './AutoCompleteText'
+import {Card, CardHeader} from 'material-ui/Card'
 
 let apiClient = new SpoonacularClient();
 let maxSearchResults = 10;
@@ -19,14 +20,19 @@ class RecipeList extends React.Component {
       const recipes = this.state.recipes;
         return (
             <div>
-                <AutoCompleteText callback={(searchInput) => {
-                  apiClient.searchRecipesAuto(searchInput, maxSearchResults, (result) => {
-                    {/*result.filter(recipe => recipe.analyzedInstructions);*/}
-                    this.setState({
-                        recipes: result,
-                    });
-                  })
-                }}/>
+                <Card className="search-card">
+                    <CardHeader fullWidth={true} className="search-box">
+                        <AutoCompleteText fullWidth={true} callback={(searchInput) => {
+                            apiClient.searchRecipesAuto(searchInput, maxSearchResults, (result) => {
+                                {/*result.filter(recipe => recipe.analyzedInstructions);*/}
+                                this.setState({
+                                    recipes: result,
+                                });
+                            })
+                        }}/>
+                    </CardHeader>
+                </Card>
+
                 {
                   recipes !== [] ?
                     recipes.map((recipe, i) => <RecipeCard key={i} recipe={recipe}/>)

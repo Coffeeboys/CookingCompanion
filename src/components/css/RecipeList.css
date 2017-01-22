@@ -22,3 +22,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.search-card {
+  width: 80%;
+  margin: 15px auto;
+
+}
+
+.search-box {
+  width: 100% !important;
+}
