@@ -5,12 +5,19 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 
+
 class App extends React.Component {
+
+    componentWillMount() {
+
+    }
     render() {
         return (
             <MuiThemeProvider>
                 <div>
-                    <AppBar title="Cooking Companion"/>
+                    <AppBar title="Yell At Your Food"
+                            onTitleTouchTap={() => window.location = "/"}
+                            />
                     <div>
                         {this.props.children}
                     </div>
@@ -19,5 +26,6 @@ class App extends React.Component {
         );
     }
 }
+
 
 export default App;

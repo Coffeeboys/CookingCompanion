@@ -9,6 +9,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import parseDefinitions from '../../utils/DefinitionParser'
 
+
 /**
  * Vertical steppers are designed for narrow screen sizes. They are ideal for mobile.
  *
@@ -18,12 +19,18 @@ import parseDefinitions from '../../utils/DefinitionParser'
  * <small>(The vertical stepper can also be used without `<StepContent>` to display a basic stepper.)</small>
  */
 class VerticalLinearStepper extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
   state = {
     finished: false,
     stepIndex: 0,
   };
 
   handleNext = () => {
+    console.log("Next called");
     let tempStepIndex = this.state.stepIndex + 1;
     let tempFinished = tempStepIndex >= this.props.directions.length;
 
@@ -31,13 +38,18 @@ class VerticalLinearStepper extends React.Component {
       stepIndex: tempStepIndex,
       finished: tempFinished,
     });
+
+    window.responsiveVoice.speak(this.props.directions[tempStepIndex].step);
   };
 
   handlePrev = () => {
     const {stepIndex} = this.state;
+    let tempStepIndex = this.state.stepIndex - 1;
+
     if (stepIndex > 0) {
-      this.setState({stepIndex: stepIndex - 1});
+      this.setState({stepIndex: tempStepIndex});
     }
+      window.responsiveVoice.speak(this.props.directions[tempStepIndex].step);
   };
 
   renderStepActions(step) {
@@ -65,6 +77,35 @@ class VerticalLinearStepper extends React.Component {
         </div>
     );
   }
+
+    componentWillMount() {
+
+        window.responsiveVoice.speak("Welcome to Recipe Navigation");
+
+        window.responsiveVoice.speak(this.props.directions[this.state.stepIndex].step);
+
+        var commands = {
+            'next *': () => {this.handleNext(); },
+            'back' : () => {this.handlePrev();},
+            'previous' : () => {this.handlePrev()},
+            'forward' : () => this.handleNext(),
+            'quiet' : () => this.cancelVoice(),
+            'continue' : () => this.resumeVoice(),
+        };
+
+        window.annyang.addCommands(commands);
+
+        window.annyang.start();
+
+    }
+
+    cancelVoice() {
+      window.responsiveVoice.pause();
+    }
+
+    resumeVoice() {
+      window.responsiveVoice.resume();
+    }
 
   render() {
     const {finished, stepIndex} = this.state;
