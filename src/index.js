@@ -14,8 +14,8 @@ import Routes from "./constants/Routes";
 injectTapEventPlugin();
 
 // API Client Demo Code
- import SpoonacularClient from "./api/SpoonacularClient";
-let client = new SpoonacularClient();
+//  import SpoonacularClient from "./api/SpoonacularClient";
+// let client = new SpoonacularClient();
 //client.searchRecipesAuto('chicken', 10, (data) => {console.log('Search Results: ' + data)});
 //client.getRecipeInfoById(156992, (data) => {
 //  console.log("Recipe Info: ");

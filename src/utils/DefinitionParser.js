@@ -17,7 +17,7 @@ function parseDefinitions (input) {
         words.map((word, i) => {
           let lowerCaseWord = word.toLowerCase();
           let definition = definitions.get(lowerCaseWord);
-          if ( definition != undefined) {
+          if ( definition !== undefined) {
             return <DefinitionPopover key={i} text={word + ' '} description={definition}/>;
           } else {
             return word + ' ';
