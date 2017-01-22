@@ -23,7 +23,7 @@ class ExpandedRecipe extends React.Component {
         if (this.state) {
             const ingredients = this.state.recipeData.extendedIngredients;
             const analyzedInstructions = this.state.recipeData.analyzedInstructions;
-            let directions = analyzedInstructions.length > 0 ? analyzedInstructions[0] : [];
+            let directions = analyzedInstructions.length > 0 ? analyzedInstructions[0].steps : [];
 
             return (
                 <div className="expanded-recipe">
