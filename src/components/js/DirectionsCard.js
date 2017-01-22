@@ -24,6 +24,16 @@ class DirectionsCard extends React.Component {
     }
     render() {
         const directions = this.state.directions;
+        if (directions.length < 1) {
+            return (
+                <Card className="directions-card">
+                    <CardHeader title="Directions"/>
+                    <CardText>
+                        No Directions :(
+                    </CardText>
+                </Card>
+            )
+        }
         return (
             <div>
                 <Card className="directions-card">
