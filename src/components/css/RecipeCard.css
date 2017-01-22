@@ -4,6 +4,10 @@
     position: relative;
 }
 
+.recipe-card-header {
+    display: none;
+}
+
 .cook-button {
 
 

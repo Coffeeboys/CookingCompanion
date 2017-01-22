@@ -20,17 +20,20 @@ class RecipeList extends React.Component {
         return (
             <div>
                 <AutoCompleteText callback={(searchInput) => {
-                  console.log(searchInput);
                   apiClient.searchRecipesAuto(searchInput, maxSearchResults, (result) => {
+                    {/*result.filter(recipe => recipe.analyzedInstructions);*/}
                     this.setState({
                         recipes: result,
                     });
                   })
                 }}/>
-                {recipes != null ?
+                {
+                  recipes !== [] ?
                     recipes.map((recipe, i) => <RecipeCard key={i} recipe={recipe}/>)
                     :
-                    <div/>
+                    <div>
+                      Loading...
+                    </div>
                 }
             </div>
         );

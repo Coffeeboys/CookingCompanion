@@ -3,11 +3,9 @@
  */
 import "../css/RecipeCard.css";
 import React from 'react';
-import {Card, CardActions, CardHeader} from 'material-ui/Card';
-import RoomService from 'material-ui/svg-icons/places/room-service';
-import RaisedButton from 'material-ui/RaisedButton';
+import {Card, CardMedia, CardTitle, CardHeader} from 'material-ui/Card';
 import {Link} from 'react-router';
-import {fullWhite} from'material-ui/styles/colors';
+import Routes from '../../constants/Routes';
 
 
 class RecipeCard extends React.Component {
@@ -19,19 +17,18 @@ class RecipeCard extends React.Component {
     }
 
     render() {
+        const recipe = this.props.recipe;
         return (
             <div>
                 <Card className="recipe-card">
-                    <CardHeader title={this.props.recipe.title} showExpandableButton={true}/>
-                    <CardActions>
-                        <Link to={"/recipe/" + this.props.recipe.id}>
-                            <RaisedButton
-                                icon={<RoomService color={fullWhite}/>}
-                                backgroundColor="#448AFF"
-                                className="cook-button"
-                            />
-                        </Link>
-                    </CardActions>
+                    <Link to={{pathname: Routes.RECIPE + recipe.id, state: recipe}}>
+                        <CardHeader className="recipe-card-header"/>
+                        <CardMedia
+                            overlay={<CardTitle title={recipe.title} subtitle={recipe.cuisine}/>}
+                        >
+                            <img src={recipe.image} height="500px"/>
+                        </CardMedia>
+                    </Link>
                 </Card>
             </div>
         );
