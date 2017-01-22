@@ -10,13 +10,6 @@ class App extends React.Component {
 
     componentWillMount() {
 
-        var commands = {
-            'hello': function() { console.log('Hello world!'); }
-        };
-
-        window.annyang.addCommands(commands);
-
-        window.annyang.start();
     }
     render() {
         return (

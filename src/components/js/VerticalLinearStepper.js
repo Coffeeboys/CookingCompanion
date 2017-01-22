@@ -19,9 +19,7 @@ import parseDefinitions from '../../utils/DefinitionParser'
  * <small>(The vertical stepper can also be used without `<StepContent>` to display a basic stepper.)</small>
  */
 class VerticalLinearStepper extends React.Component {
-  componentWillMount() {
 
-  }
 
   state = {
     finished: false,
@@ -70,6 +68,21 @@ class VerticalLinearStepper extends React.Component {
         </div>
     );
   }
+
+    componentWillMount() {
+
+        var commands = {
+            'next *': () => {this.handleNext(); },
+            'back' : () => {this.handlePrev();},
+            'previous' : () => {this.handlePrev()},
+            'forward' : () => this.handleNext()
+        };
+
+        window.annyang.addCommands(commands);
+
+        window.annyang.start();
+
+    }
 
   render() {
     const {finished, stepIndex} = this.state;
