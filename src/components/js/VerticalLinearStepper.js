@@ -7,6 +7,7 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import parseDefinitions from '../../utils/DefinitionParser'
 
 /**
  * Vertical steppers are designed for narrow screen sizes. They are ideal for mobile.
@@ -23,10 +24,8 @@ class VerticalLinearStepper extends React.Component {
   };
 
   handleNext = () => {
-    // const {stepIndex} = this.state;
-
     let tempStepIndex = this.state.stepIndex + 1;
-    let tempFinished = tempStepIndex >= this.props.steps.length;
+    let tempFinished = tempStepIndex >= this.props.directions.length;
 
     this.setState({
       stepIndex: tempStepIndex,
@@ -73,13 +72,11 @@ class VerticalLinearStepper extends React.Component {
     return (
         <div style={{maxWidth: 380, maxHeight: 400, margin: 'auto'}}>
           <Stepper activeStep={stepIndex} orientation="vertical">
-            {this.props.steps.map((step, i) => {
+            {this.props.directions.map((step, i) => {
               return (<Step key={i}>
                 <StepLabel>{step.number}</StepLabel>
                 <StepContent>
-                  <p>
-                    {step.step}
-                  </p>
+                  {parseDefinitions(step.step)}
                   {this.renderStepActions(i)}
                 </StepContent>
               </Step>);
@@ -95,7 +92,7 @@ class VerticalLinearStepper extends React.Component {
                     }}
                 >
                   Click here
-                </a> to reset the example.
+                </a> to go back to the beginning.
               </p>
           )}
         </div>
