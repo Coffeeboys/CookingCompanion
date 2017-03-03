@@ -4,10 +4,7 @@
 
 import 'ajax';
 import * as $ from "jquery";
-//Trevor's Free Plan Key
-//let API_KEY = 'hjjrAR0vfumshF23Jto21D5tpHwFp1TSPs2jsntd6BU17fFKRY';
-//Evan's Hackathon Plan Key
-let API_KEY = 'LlQw0cNXgpmshqvMOWLiLEE0kMzxp101R4YjsnY5IVBT9aQfXi';
+let API_KEY = ''; //shh
 let ENDPOINT = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/';
 let HEADERS = {
   'X-Mashape-Key' : API_KEY,
